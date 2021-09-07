@@ -1,0 +1,365 @@
+[
+  {
+    "type": "category",
+    "title": "Major Category",
+    "description": "Major Category",
+    "entries": [
+      {
+        "type": "category",
+        "title": "visual mapping",
+        "description": "Visual Mapping",
+        "childrenDescription": "Visual Mapping: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "hierarchical",
+            "description": "Hierarchical Structure Layout",
+            "content": "Hierarchical Structure"
+          },
+          {
+            "type": "category-entry",
+            "title": "grid",
+            "description": "Grid & Rectangle Layout",
+            "content": "Grid & Rectangle Layout"
+          },
+         
+          {
+            "type": "category-entry",
+            "title": "geographic",
+            "description": "Geographic Map Layout",
+            "content": "Geographic Map Layout"
+          },
+          {
+            "type": "category-entry",
+            "title": "node-link",
+            "description": "Node-Link Graph Layout",
+            "content": "Node-Link Graph Layout"
+          },
+          {
+            "type": "category-entry",
+            "title": "perception",
+            "description": "Perception & Color",
+            "content": "Perception & Color"
+          }
+         
+        ]
+      },
+      {
+        "type": "category",
+        "title": "data enhancement",
+        "description": "Data Enhancement",
+        "childrenDescription": "Data Enhancement & Transformation: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "dimension",
+            "description": "Dimension Reduction",
+            "content": "Dimension Reduction"
+          },
+          {
+            "type": "category-entry",
+            "title": "classification",
+            "description": "Data Classification",
+            "content": "Data Classification"
+          },
+          
+          {
+            "type": "category-entry",
+            "title": "refinement",
+            "description": "Data Refinement",
+            "content": "Data Refinement"
+          },
+          {
+            "type": "category-entry",
+            "title": "numerosity",
+            "description": "Numerosity Reduction",
+            "content": "Numerosity Reduction"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "interactive exploration",
+        "description": "Interactive Exploration",
+        "childrenDescription": "Interactive Exploration & Analysis: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "navigation",
+            "description": "Navigation",
+            "content": "Navigation"
+          },
+          {
+            "type": "category-entry",
+            "title": "filter",
+            "description": "Filter",
+            "content": "Filter"
+          },
+          {
+            "type": "category-entry",
+            "title": "reconfigure",
+            "description": "Reconfigure",
+            "content": "Reconfigure"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Optimization model",
+    "description": "Optimization model",
+    "childrenDescription": "Optimization model:",
+    "entries": [
+      
+      {
+        "type": "category-entry",
+        "title": "linear",
+        "description": "Linear Programming",
+        "content": "Linear Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "other1",
+        "description": "Other",
+        "content": "Other"
+      },
+      {
+        "type": "category-entry",
+        "title": "unconstrained",
+        "description": "Unconstrained Programming",
+        "content": "Unconstrained Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "multi-object",
+        "description": "Multi-Object Programming",
+        "content": "Multi-Object Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "quadratic",
+        "description": "Quadratic Programming",
+        "content": "Quadratic Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "nonlinear",
+        "description": "Nonlinear Programming",
+        "content": "Nonlinear Programming"
+      }
+     
+     
+      
+      
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Solution method",
+    "description": "Solution method",
+    "entries": [
+      {
+        "type": "category",
+        "title": "data structure",
+        "description": "Data Structure",
+        "childrenDescription": "Data Structure and Algorithm: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "grid search",
+            "description": "Grid Search",
+            "content": "Grid Search"
+          },
+          {
+            "type": "category-entry",
+            "title": "divide",
+            "description": "Divide and Conquer",
+            "content": "Divide and Conquer"
+          },
+          {
+            "type": "category-entry",
+            "title": "graph theory algorithms",
+            "description": "Graph Theory Algorithms",
+            "content": "Graph Theory Algorithms"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "heuristic algorithm",
+        "description": "Heuristic Algorithm",
+        "childrenDescription": "Heuristic Algorithm: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "intelligent optimization",
+            "description": "Intelligent Optimization Algorithms",
+            "content": "Intelligent Optimization"
+          },
+          {
+            "type": "category-entry",
+            "title": "simple heuristic",
+            "description": "Simple Heuristic Algorithm",
+            "content": "Simple Heuristic Algorithm"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "line search",
+        "description": "Line Search Method",
+        "childrenDescription": "Line Search Method: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "active set method",
+            "description": "Active Set Method",
+            "content": "Active Set Method"
+          },
+         
+          {
+            "type": "category-entry",
+            "title": "optimization",
+            "description": "Optimization Method without Derivative",
+            "content": "Optimization Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "first order",
+            "description": "First order Gradient-based Optimization Algorithm",
+            "content": "First order Gradient-based"
+          },
+          {
+            "type": "category-entry",
+            "title": "second order",
+            "description": "Second order Gradient-based Optimization Algorithm",
+            "content": "Second order Gradient-based"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "solver",
+        "description": "Solver",
+        "childrenDescription": "Solver",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "solver1",
+            "description": "Solver",
+            "content": "Solver"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "planning algorithm",
+        "description": "Planning Algorithm",
+        "childrenDescription": "Planning Algorithm",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "simplex method",
+            "description": "Simplex Method",
+            "content": "Simplex Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "hungary",
+            "description": "Hungary Method",
+            "content": "Hungary Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "dynamic",
+            "description": "Dynamic Programming",
+            "content": "Dynamic Programming"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "title": "other method",
+        "description": "Other Method",
+        "childrenDescription": "Other Method: ",
+        "entries": [
+          {
+            "type": "category-entry",
+            "title": "two",
+            "description": "Two-Stage Method",
+            "content": "Two-Stage Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "analytical method",
+            "description": "Analytical Method",
+            "content": "Analytical Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "approximation",
+            "description": "Approximation Algorithm",
+            "content": "Approximation Algorithm"
+          },
+          {
+            "type": "category-entry",
+            "title": "numerical",
+            "description": "Numerical Algebra Method",
+            "content": "Numerical Algebra Method"
+          },
+          {
+            "type": "category-entry",
+            "title": "other",
+            "description": "Other",
+            "content": "Other"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Challenge",
+    "description": "Challenge",
+    "childrenDescription": "Challenge: ",
+    "entries": [
+      {
+        "type": "category-entry",
+        "title": "application",
+        "description": "Application",
+        "content": "Application"
+      },
+      {
+        "type": "category-entry",
+        "title": "evaluation",
+        "description": "Evaluation",
+        "content": "Evaluation"
+      },
+      {
+        "type": "category-entry",
+        "title": "model generalization",
+        "description": "Model generalization",
+        "content": "Model generalization"
+      },
+      {
+        "type": "category-entry",
+        "title": "model scalability",
+        "description": "Model scalability",
+        "content": "Model scalability"
+      },
+      {
+        "type": "category-entry",
+        "title": "theory research",
+        "description": "Theory research",
+        "content": "Theory research"
+      },
+      {
+        "type": "category-entry",
+        "title": "visual interaction",
+        "description": "Visual interaction",
+        "content": "Visual interaction"
+      }
+    ]
+  }
+]

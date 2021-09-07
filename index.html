@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MPM Survey" />
+    <meta name="author" content="Gopher" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>MPM Survey</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Optional Bootstrap theme (for fancy look) -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/sc2.css" rel="stylesheet" />
+
+    <!-- noUiSlider -->
+    <link href="css/jquery.nouislider.min.css" rel="stylesheet" />
+
+    <!-- Custom styles used for this page -->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- /.modal -->
+    <script src="js/d3.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+
+    <!-- Include all compiled plugins -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- noUiSlider -->
+    <script src="js/jquery.nouislider.min.js"></script>
+
+    <!-- D3 (used for statistics diagram) -->
+    <script src="js/d3.v3.min.js"></script>
+    <!-- Colorbrewer colors (used for statistics diagram) -->
+    <script src="js/colorbrewer.js"></script>
+
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <!-- Custom JS code -->
+    <script src="js/visbrowser.js"></script>
+    <script src="js/d3.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Static navbar -->
+    <div
+      class="navbar navbar-default navbar-static-top custom-navbar"
+      role="navigation"
+    >
+      <div class="container-fluid custom-navbar-container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="navbar-header-container">
+            <div class="navbar-header-top">
+              <span class="navbar-brand-title"
+                >Application of Mathematical Programming Model in Information
+                Visualization: A Survey</span
+              >
+            </div>
+
+            <div class="navbar-header-bottom">
+              Provided by <a href="https://zjutvis.org/">ZJUTVIS group</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul id="filtersTabList" class="nav nav-tabs" role="tablist">
+      <button class="hello" type="button">
+        <li role="presentation" class="active">
+          <a href="#" data-toggle="modal" data-target="#summaryTableModal"
+            >Summary</a
+          >
+        </li>
+      </button>
+
+      <button class="hello">
+        <li role="presentation" class="active">
+          <a href="#" data-toggle="modal" data-target="#scatterModal3"
+            >Scatter</a
+          >
+        </li>
+      </button>
+    </ul>
+
+    <!-- Main content wrapper -->
+    <table class="content-wrapper">
+      <tr class="content-row">
+        <td class="sidebar-fixed">
+          <div class="sidebar-container">
+            <div
+              id="filtersPanel"
+              class="panel panel-default small-bottom-margin"
+            >
+              <div class="panel-body">
+                <h5 class="entries-count-label panel-label">
+                  Techniques displayed:
+                </h5>
+                <div id="displayedEntriesCount"></div>
+              </div>
+
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5 class="inline-block panel-label">Search:</h5>
+                  <div class="btn-group btn-group-justified">
+                    <input
+                      id="searchField"
+                      type="search"
+                      class="form-control"
+                    />
+                    <span
+                      class="glyphicon glyphicon-remove search-clear"
+                    ></span>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5 class="inline-block panel-label">Time filter:</h5>
+                  <div class="time-filter-label-container">
+                    <span id="timeFilterMin" class="time-filter-min"></span>
+                    <span id="timeFilterMax" class="time-filter-max"></span>
+                  </div>
+                  <div class="time-filter-container">
+                    <div id="timeFilter"></div>
+                  </div>
+                  <div id="timeChart" class="time-chart"></div>
+                </li>
+              </ul>
+
+              <ul id="categoriesList" class="list-group"></ul>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="container-fluid">
+            <div class="row-container">
+              <div class="row">
+                <div id="entriesContainer" class="col-md-12">
+                  <p class="text-muted">Here comes the content</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="container-fluid">
+      <div class="row-container">
+        <div class="footer">
+          <hr />
+          <p class="text-muted credit no-top-margin no-bottom-margin">
+            © ZJUTVIS group 2020-2021. All rights for the technique images
+            belong to their respective owners.
+          </p>
+          <p class="text-muted credit no-top-margin no-bottom-margin">
+            Last updated: Sep. 6, 2021
+          </p>
+          <!-- <p class="text-muted credit no-top-margin no-bottom-margin">
+					This website is using Google Analytics (for statistical purposes only) and cookies (for dismissible
+					dialogs only).
+				</p> -->
+          <p>
+            This website is inspired by
+            <a href="https://textvis.lnu.se/">Text Visualization Browser</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entry details modal -->
+    <div
+      id="entryDetailsModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="entryDetailsTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div class="modal-dialog modal-wide">
+        <div class="modal-content">
+          <div class="modal-header" hidden="true"></div>
+          <div class="modal-body">
+            <div class="media">
+              <span class="pull-left">
+                <img
+                  id="entryDetailsThumbnail"
+                  class="media-object thumbnail200"
+                />
+              </span>
+              <div class="media-body">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-hidden="true"
+                >
+                  &times;
+                </button>
+                <h4
+                  id="entryDetailsTitle"
+                  class="media-heading entry-details-field entry-details-title"
+                ></h4>
+                <h5 id="entryDetailsAuthors" class="entry-details-field"></h5>
+                <div
+                  id="entryDetailsCategories"
+                  class="entry-details-field"
+                ></div>
+                <div class="vertical-delimiter"></div>
+                <h6 id="entryDetailsReference" class="entry-details-field"></h6>
+                <h6 id="entryDetailsUrl" class="entry-details-field"></h6>
+                <h6 id="entryDetailsBibtex" class="entry-details-field"></h6>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" hidden="true"></div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <!-- Summary table modal -->
+    <div
+      id="summaryTableModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="summaryTableTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div class="modal-dialog modal-max">
+        <div class="modal-content">
+          <div class="modal-header" hidden="true"></div>
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+            <h3>Survey summary</h3>
+            <div id="summaryTableContainer"></div>
+          </div>
+          <div class="modal-footer" hidden="true"></div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div
+      id="scatterModal3"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="summaryTableTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div class="modal-dialog modal-max">
+        <div class="modal-content">
+          <div class="modal-header" hidden="true"></div>
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+            <h3>scatter</h3>
+          </div>
+          <div class="modal-footer" hidden="true"></div>
+          <div id="contain" style="height: 80em; width: 120em"></div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+  </body>
+  <script>
+    var dom = document.getElementById("contain");
+
+    var myChart = echarts.init(document.getElementById("contain"));
+
+    // var myChart = echarts.init(dom);
+    var app = {};
+
+    var option;
+
+    var schema = [
+      { name: "tsne-x", index: 0, text: "Tsne-x" },
+      { name: "tsne-y", index: 1, text: "Tsne-y" },
+      { name: "title", index: 2, text: "Title" },
+      { name: "major category", index: 3, text: "Major Category" },
+      { name: "minor category", index: 4, text: "Minor Category" },
+      { name: "model", index: 5, text: "Model" },
+    ];
+
+    var dataDC = [
+      [
+        -2.573446,
+        -1.1316894,
+        "A Visual Analytics Framework for the Detection of Anomalous Call Stack Trees in High Performance Computing Applications",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Non-linear Programming",
+      ],
+      [
+        -0.35832205,
+        -2.565309,
+        "CrimAnalyzer- Understanding Crime Patterns in Sa ̃o Paulo",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Quadratic Programming",
+      ],
+      [
+        -2.4837656,
+        -1.1998779,
+        "Uncertainty Footprint- Visualization of Nonuniform Behavior of Iterative Algorithms Applied to 4D Cell Tracking",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.1782439,
+        -2.1082103,
+        "Visual analytics for networked-guarantee loans risk management",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4318624,
+        -1.7401288,
+        "Module-based visualization of large-scale graph network data",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.5903209,
+        -2.2773297,
+        "The Visual Causality Analyst- An Interactive Interface for Causal Reasoning",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4012268,
+        -3.5977094,
+        "DECE- Decision Explorer with Counterfactual Explanations for Machine Learning Models",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Multi-objective Programming",
+      ],
+      [
+        -2.2640705,
+        -3.559224,
+        "MobiSeg- Interactive Region Segmentation Using Heterogeneous Mobility Data",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Quadratic Programming",
+      ],
+      [
+        -4.9237146,
+        -0.4730075,
+        "Synthesizing Ornamental Typefaces",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.3073132,
+        -3.2692873,
+        "Voila- Visual Anomaly Detection and Monitoring with Streaming Spatiotemporal Data",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Non-linear Programming",
+      ],
+      [
+        -1.5639555,
+        -2.6348937,
+        "Finding communities in bicycle sharing system",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.4918182,
+        -2.2003174,
+        "TPFlow- Progressive Partition and Multidimensional Pattern Extraction for Large-Scale Spatio-Temporal Data Analysis",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.1864007,
+        -1.826452,
+        "An interactive visual analytics approach for network anomaly detection through smart labeling",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.1929961,
+        -1.5873933,
+        "Blockwise Human Brain Network Visual Comparison Using NodeTrix Representation",
+        "Data Enhancement & Transformation",
+        "Data Classification",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataDR = [
+      [
+        -5.1090403,
+        -1.1956102,
+        "Critical Points of Gaussian-Distributed Scalar Fields on Simplicial Grids",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Quadratic Programming",
+      ],
+      [
+        -4.2408266,
+        -2.3776999,
+        "A new visualization method in many-objective optimization with chord diagram and angular mapping",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Multi-objective Programming",
+      ],
+      [
+        -3.651053,
+        -1.6095856,
+        "Similarity Clustering of Dimensions for an Enhanced Visualization of Multidimensional Data",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Linear Programming",
+      ],
+      [
+        -2.1963573,
+        -1.777231,
+        "Uncertainty visualization in stratigraphic correlation based on multi-source data fusion",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.6298629,
+        -3.3781736,
+        "Visual Diagnosis of Tree Boosting Methods",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.6954008,
+        -1.3551579,
+        "GraphScape- A Model for Automated Reasoning about Visualization Similarity and Sequencing",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Linear Programming",
+      ],
+      [
+        -3.5018358,
+        -2.467938,
+        "A Visual Analytics Approach for Categorical Joint Distribution Reconstruction from Marginal Projections",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Linear Programming",
+      ],
+      [
+        -2.7623339,
+        -1.655028,
+        "Statistical Super Resolution for Data Analysis and Visualization of Large Scale Cosmological Simulations",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.5505328,
+        -1.9488118,
+        "Spatial–temporal visualization of city-wide crowd movement",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.119685076,
+        -1.7882723,
+        "Formalizing Visualization Design Knowledge as Constraints- Actionable and Extensible Models in Draco",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4876549,
+        -1.6521035,
+        "Toward the better modeling and visualization of uncertainty for streaming data",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.46081,
+        -1.0437349,
+        "Salient Time Steps Selection from Large Scale Time-Varying Data Sets with Dynamic Time Warping",
+        "Data Enhancement & Transformation",
+        "Data Refinement",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataDRN = [
+      [
+        -2.814386,
+        -1.0366861,
+        "SolarView- Low Distortion Radial Embedding with a Focus",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Linear Programming",
+      ],
+      [
+        -2.221718,
+        -1.8155471,
+        "An Interactive Method to Improve Crowdsourced Annotations",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.3971725,
+        -1.7596415,
+        "Adaptable Radial Axes Plots for Improved Multivariate Data Visualization",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Linear Programming",
+      ],
+      [
+        -1.9508245,
+        -2.8571632,
+        "Visual analytics of economic features for multivariate spatio-temporal GDP data",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.4440742,
+        -3.5598345,
+        "Visual Progression Analysis of Event Sequence Data",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.538348,
+        -1.7497493,
+        "Progressive Uniform Manifold Approximation and Projection",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.2523131,
+        -0.62115395,
+        "Map Warping for the Annotation of Metro Maps",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.509211,
+        -2.3704896,
+        "Local Affine Multidimensional Projection",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Non-linear Programming",
+      ],
+      [
+        -2.1678414,
+        -0.7312097,
+        "A Visual Analytics System for Optimizing Communications in Massively Parallel Applications",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Quadratic Programming",
+      ],
+      [
+        -4.8617415,
+        -1.888672,
+        "Orthographic Star Coordinates",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.294298,
+        -0.9868484,
+        "Multiscale Visualization and Exploration of Large Bipartite Graphs",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.2830389,
+        -0.718081,
+        "Visual Encoding of Dissimilarity Data via Topology-Preserving Map Deformation",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.6431885,
+        -0.060004186,
+        "Exact and Approximate Area-Proportional Circular Venn and Euler Diagrams",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.650981,
+        -1.931018,
+        "Multi-Perspective, Simultaneous Embedding",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.4671283,
+        -1.1792964,
+        "Organizing Search Results with a Reference Map",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.4394326,
+        -2.0498216,
+        "MatchOrchestra- a generalized visual analytics for competitive team sports",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.2377453,
+        -1.3963857,
+        "An Incremental Dimensionality Reduction Method for Visualizing Streaming Multidimensional Data",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.3951356,
+        -3.2314336,
+        "Supporting Analysis of Dimensionality Reduction Results with Contrastive Learning",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Non-linear Programming",
+      ],
+      [
+        -2.7962482,
+        -1.4202769,
+        "Axis Calibration for Improving Data Attribute Estimation in Star Coordinates Plots",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Linear Programming",
+      ],
+      [
+        -3.622097,
+        -1.6687359,
+        "Exploring High-Dimensional Structure via Axis-Aligned Decomposition of Linear Projections",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Quadratic Programming",
+      ],
+      [
+        -3.4648266,
+        -2.5346622,
+        "Interactive Regression Lens for Exploring Scatter Plots",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.2347214,
+        -2.6490295,
+        "Optimal Sets of Projections of High-Dimensional Data",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.9379141,
+        -1.3381834,
+        "Visualizing Multidimensional Data with Order Statistics",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.9875755,
+        -1.8844174,
+        "Visualizing Time-Dependent Data Using Dynamic t-SNE",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.798779,
+        -1.5939357,
+        "DCMDS-RV- density-concentrated multi-dimensional scaling for relation visualization",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.394262,
+        -2.287743,
+        "iLAMP- Exploring High-Dimensional Spacing through Backward Multidimensional Projection",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Non-linear Programming",
+      ],
+      [
+        -4.704765,
+        -2.4291055,
+        "TopoMap- A 0-dimensional Homology Preserving Projection of High-Dimensional Data",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Quadratic Programming",
+      ],
+      [
+        -0.33802915,
+        -2.3877828,
+        "FlowSense- A Natural Language Interface for Visual Data Exploration within a Dataflow System",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.0075088,
+        -1.443773,
+        "cite2vec- Citation-Driven Document Exploration via Word Embeddings",
+        "Data Enhancement & Transformation",
+        "Dimension Reduction",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataF = [
+      [
+        -1.9793091,
+        -2.5015564,
+        "TopicLens- Efficient Multi-Level Visual Topic Exploration of Large-Scale Document Collections",
+        "Interactive Exploration & Analysis",
+        "Filter",
+        "Quadratic Programming",
+      ],
+      [
+        -3.0510187,
+        -1.6219213,
+        "Explainers- Expert Explorations with Crafted Projections",
+        "Interactive Exploration & Analysis",
+        "Filter",
+        "Quadratic Programming",
+      ],
+      [
+        -3.6265535,
+        -1.6926687,
+        "TopicSifter- Interactive Search Space Reduction Through Targeted Topic Modeling",
+        "Interactive Exploration & Analysis",
+        "Filter",
+        "Quadratic Programming",
+      ],
+    ];
+    var dataGML = [
+      [
+        -0.51639205,
+        0.038114194,
+        "Drawing Road Networks with Focus Regions",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -2.5690858,
+        -0.52638537,
+        "Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Linear Programming",
+      ],
+      [
+        -0.44726464,
+        -0.35091826,
+        "Flow Map Layout via Spiral Trees",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.9301927,
+        -0.39859506,
+        "Algorithms for necklace maps",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Non-linear Programming",
+      ],
+      [
+        -2.6883314,
+        0.5502954,
+        "Automatic Generation of Destination Maps",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -0.73511326,
+        -0.65346396,
+        "Metro Maps on Octilinear Grid Graphs",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Linear Programming",
+      ],
+      [
+        -3.0662193,
+        0.4311168,
+        "Rendering Effective Route Maps- Improving Usability Through Generalization",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.9044743,
+        0.29583877,
+        "Automatic Metro Map Layout Using Multicriteria Optimization",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -3.7630856,
+        -0.73547846,
+        "Stenomaps- Shorthand for shapes",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.9156022,
+        0.5505206,
+        "MetroSets- Visualizing Sets as Metro Maps",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Linear Programming",
+      ],
+      [
+        -3.9854617,
+        1.0127869,
+        "Embedding Temporal Display into Maps for Occlusion-Free Visualization of Spatio-Temporal Data",
+        "Visual Mapping & Structure",
+        "Geographic Map Layout",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataGRL = [
+      [
+        -0.9756483,
+        0.2839831,
+        "High-Quality Ultra-Compact Grid Layout of Grouped Networks",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Linear Programming",
+      ],
+      [
+        -2.4304452,
+        0.20173554,
+        "Constrained Optimization for Disoccluding Geographic Landmarks in 3D Urban Maps",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Linear Programming",
+      ],
+      [
+        -2.4453087,
+        -1.2064667,
+        "ViSizer- A Visualization Resizing Framework",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.9653299,
+        -3.2670765,
+        "SRVis- Towards Better Spatial Integration in Ranking Visualization",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.0613356,
+        0.099118195,
+        "Label Placement for Outliers in Scatterplots",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -4.061109,
+        -0.97171533,
+        "PyramidTags- Context-, Time- and Word Order-Aware Tag Maps to Explore Large Document Collections",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -3.667647,
+        -0.27441335,
+        "Generating Tile Maps",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.5815978,
+        -3.0893633,
+        "Visualization of complex dynamic datasets by means of mathematical optimization",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Non-linear Programming",
+      ],
+      [
+        0.27472863,
+        -0.5718393,
+        "Efficient Optimal Overlap Removal- Algorithms and Experiments",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Linear Programming",
+      ],
+      [
+        -2.958269,
+        -0.26242113,
+        "UnTangle Map- Visual Analysis of Probabilistic Multi-Label Data",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.6037066,
+        -1.173339,
+        "Distance Aware Tag Clouds",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.8669884,
+        -0.24641451,
+        "Improved Grid Map Layout by Point Set Matching",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Linear Programming",
+      ],
+      [
+        -2.9437008,
+        1.0296202,
+        "Global Beautification of 2D and 3D Layouts With Interactive Ambiguity Resolution",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -2.7737138,
+        -0.6198438,
+        "Optimal Algorithms for Compact Linear Layouts",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.7079703,
+        -3.1072009,
+        "AdaM- Adapting Multi-User Interfaces for Collaborative Environments in Real-Time",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Linear Programming",
+      ],
+      [
+        -2.591912,
+        -0.2253802,
+        "A Globally Conforming Lattice Structure for 2D Stress Tensor Visualization",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Non-linear Programming",
+      ],
+      [
+        -3.1388493,
+        -1.1860312,
+        "Multi-display Visual Analysis- Model, Interface, and Layout Computation",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -1.5339408,
+        -0.8319918,
+        "E-Grid- a visual analytics system for evaluation structures",
+        "Visual Mapping & Structure",
+        "Grid & Rectangle Layout",
+        "Quadratic Programming",
+      ],
+    ];
+
+    var dataHSL = [
+      [
+        -1.2967381,
+        -0.32618424,
+        "Minimizing the Number of Edges via Edge Concentration in Dense Layered Graphs",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.7790773,
+        -1.3525777,
+        "How Hierarchical Topics Evolve in Large Text Corpora",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Linear Programming",
+      ],
+      [
+        -1.5847762,
+        0.8631779,
+        "Visual Exploration of Complex Time-Varying Graphs",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.8545642,
+        -1.2934966,
+        "Uncertainty Treemaps",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.140905,
+        -2.7092276,
+        "DICON- Interactive Visual Analysis of Multidimensional Clusters",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.1640089,
+        -2.934642,
+        "Optimizing Hierarchical Visualizations with the Minimum Description Length Principle",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.5868803,
+        -0.58056766,
+        "TreeNetViz- Revealing Patterns of Networks over Tree Structures",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.017031,
+        -0.52786094,
+        "Temporal Treemaps- Static Visualization of Evolving Trees",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.3488374,
+        -1.1370304,
+        "Whisper- Tracing the Spatiotemporal Process of Information Diffusion in Real Time",
+        "Visual Mapping & Structure",
+        "Hierarchical Structure Layout",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataN = [
+      [
+        -3.9686072,
+        1.0071762,
+        "Embedding Spatio-Temporal Information into Maps by Route-Zooming",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Multi-objective Programming",
+      ],
+      [
+        -2.4107068,
+        -0.6055534,
+        "Focus+Context Metro Maps",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Non-linear Programming",
+      ],
+      [
+        -3.6902044,
+        -0.021251658,
+        "Zoomless Maps- External Labeling Methods for the Interactive Exploration of Dense Point Sets at a Fixed Map Scale",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Linear Programming",
+      ],
+      [
+        -4.047367,
+        0.313913,
+        "Algorithms for Labeling Focus Regions",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.0697255,
+        -0.925679,
+        "Stable treemaps via local moves",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.9307324,
+        0.17861146,
+        "Structure-aware Fisheye Views for Efficient Large Graph Exploration",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.5456847,
+        0.59730875,
+        "MobileVisFixer- Tailoring Web Visualizations for Mobile Phones Leveraging an Explainable Reinforcement Learning Framework",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.3625276,
+        -1.924073,
+        "Dis-Function- Learning Distance Functions Interactively",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.6858506,
+        -0.75077057,
+        "Topological Fisheye Views for Visualizing Large Graphs",
+        "Interactive Exploration & Analysis",
+        "Navigation",
+        "Multi-objective Programming",
+      ],
+    ];
+
+    var dataNGL = [
+      [
+        -2.5035203,
+        -0.5562586,
+        "Bubble Sets- Revealing Set Relations with Isocontours over Existing Visualizations",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.9271415,
+        0.40201044,
+        "DRGraph- An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.6238873,
+        -0.7456101,
+        "DoughNets- Visualising Networks Using Torus Wrapping",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4096301,
+        0.1240546,
+        "Edge Compression Techniques for Visualization of Dense Directed Graphs",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -2.6774788,
+        -1.0666627,
+        "An Efficient Framework for Generating Storyline Visualizations from Streaming Data",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -0.943286,
+        -0.406868,
+        "Optimal Sankey Diagrams via Integer Programming",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Linear Programming",
+      ],
+      [
+        -1.192187,
+        0.22352992,
+        "Improved Optimal and Approximate Power Graph Compression for Clearer Visualisation of Dense Graphs",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Linear Programming",
+      ],
+      [
+        -1.510501,
+        1.3044212,
+        "BatchLayout- A Batch-Parallel Force-Directed Graph Layout Algorithm in Shared Memory",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.9490594,
+        0.843201,
+        "HOLA- Human-like Orthogonal Network Layout",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.3545625,
+        1.0614064,
+        "Effective Visualization of Sparse Image-to-Image Correspondences",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.7405171,
+        -1.255865,
+        "Interactive Steering of Hierarchical Clustering",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.57410544,
+        -1.1906421,
+        "OD Morphing- Balancing Simplicity with Faithfulness for OD Bundling",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Non-linear Programming",
+      ],
+      [
+        -1.4829402,
+        -0.20798562,
+        "Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.7428845,
+        0.84547526,
+        "Online Dynamic Graph Drawing",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.6032488,
+        0.8353294,
+        "Intelligent Graph Layout Using Many Users’ Input",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.7374375,
+        -0.99318933,
+        "Design Considerations for Optimizing Storyline Visualizations",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.6057916,
+        -3.6504693,
+        "Visual Causality Analysis of Event Sequence Data",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -4.4400244,
+        -0.3184452,
+        "SineStream- Improving the Readability of Streamgraphs by Minimizing Sine Illusion Effects",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.3862259,
+        -0.18399517,
+        "Drawing Directed Graphs Using Quadratic Programming",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -2.661241,
+        -1.1686456,
+        "iStoryline- Effective Convergence to Hand-drawn Storylines",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4284494,
+        -1.0824661,
+        "A Deep Generative Model for Graph Layout",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.2603347,
+        -0.9354834,
+        "StoryFlow- Tracking the Evolution of Stories",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -0.6171609,
+        -0.44017267,
+        "Improved Circular Layouts",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Non-linear Programming",
+      ],
+      [
+        -1.2156328,
+        -0.78500104,
+        "Constrained Graph Layout",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -1.3477101,
+        0.0796016,
+        "IPSEP-COLA- An Incremental Procedure for Separation Constraint Layout of Graphs",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -2.086004,
+        0.8446008,
+        "dNNG- Quality Metrics and Layout for Neighbourhood Faithfulness",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.1879938,
+        -0.4204213,
+        "A Visual Analysis Approach to Cohort Study of Electronic Patient Records",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.4718103,
+        0.7459711,
+        "Graph Drawing by Stochastic Gradient Descent",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.787362,
+        -0.9827973,
+        "Optimizing Stepwise Animation in Dynamic Set Diagrams",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Multi-objective Programming",
+      ],
+      [
+        -2.4356937,
+        -0.60769826,
+        "Graph Layouts by t-SNE",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -0.48477018,
+        -0.25234962,
+        "Integrating Edge Routing into Force-Directed Layout",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -1.3731912,
+        -1.7534735,
+        "Dynamic Network Visualization with Extended Massive Sequence Views",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Non-linear Programming",
+      ],
+      [
+        -1.7536383,
+        -2.6307678,
+        "Let It Flow- a Static Method for Exploring Dynamic Graphs",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.3147898,
+        -3.8232307,
+        "EvoRiver- Visual Analysis of Topic Coopetition on Social Media",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Quadratic Programming",
+      ],
+      [
+        -3.8245435,
+        0.484568,
+        "There is More to Streamgraphs than Movies- Better Aesthetics via Ordering and Lassoing",
+        "Visual Mapping & Structure",
+        "Node-Link Graph Layout",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataNR = [
+      [
+        -1.3388515,
+        -3.6830592,
+        "Analyzing the Noise Robustness of Deep Neural Networks",
+        "Data Enhancement & Transformation",
+        "Numerosity Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.4977167,
+        -3.6721523,
+        "EventThread- Visual Summarization and Stage Analysis of Event Sequence Data",
+        "Data Enhancement & Transformation",
+        "Numerosity Reduction",
+        "Non-linear Programming",
+      ],
+      [
+        -1.9654168,
+        -1.1676673,
+        "Eiffel- Evolutionary Flow Map for Influence Graph Visualization",
+        "Data Enhancement & Transformation",
+        "Numerosity Reduction",
+        "Quadratic Programming",
+      ],
+      [
+        -1.7093469,
+        -2.0489352,
+        "VIBR- Visualizing Bipartite Relations at Scale with the Minimum Description Length Principle",
+        "Data Enhancement & Transformation",
+        "Numerosity Reduction",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.6209016,
+        -2.941348,
+        "Sequence Synopsis- Optimize Visual Summary of Temporal Event Data",
+        "Data Enhancement & Transformation",
+        "Numerosity Reduction",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataPC = [
+      [
+        -2.9004335,
+        -1.4739213,
+        "Perception-Based Visual Quality Measures",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Quadratic Programming",
+      ],
+      [
+        0.2664438,
+        -1.3487811,
+        "Arc Length-Based Aspect Ratio Selection",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.7310226,
+        1.6164205,
+        "Data-Driven Colormap Optimization for 2D Scalar Field Visualization",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Non-linear Programming",
+      ],
+      [
+        -2.029905,
+        -0.10211941,
+        "Measuring Symmetry in Drawings of Graphs",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.308042,
+        -1.1274635,
+        "Categorical Colormap Optimization with Visualization Case Studies",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Quadratic Programming",
+      ],
+      [
+        -3.0660183,
+        -0.24412583,
+        "A Data-Driven Approach to Hue-Preserving Color-Blending",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Quadratic Programming",
+      ],
+      [
+        -2.2357545,
+        -0.074668884,
+        "Probabilistic Graph Layout for Uncertain Network Visualization",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Non-linear Programming",
+      ],
+      [
+        -2.6162498,
+        -2.829622,
+        "Representing Multivariate Data by Optimal Colors to Uncover Events of Interest in Time Series Data",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Quadratic Programming",
+      ],
+      [
+        -4.1722074,
+        -2.89039,
+        "Relaxing Dense Scatter Plots with Pixel-Based Mappings",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Linear Programming",
+      ],
+      [
+        -2.548836,
+        -2.0936053,
+        "Optimizing Color Assignment for Perception of Class Separability in Multiclass Scatterplots",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.0096173,
+        -2.1383877,
+        "Cuttlefish- Color Mapping for Dynamic Multi-Scale Visualizations",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.2322764,
+        0.80793816,
+        "GMap- Visualizing Graphs and Clusters as Maps",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Non-linear Programming",
+      ],
+      [
+        -2.6677907,
+        -2.5782378,
+        "Palettailor- Discriminable Colorization for Categorical Data",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+      [
+        -3.06049,
+        -2.2828918,
+        "Visual Abstraction and Exploration of Multi-class Scatterplots",
+        "Visual Mapping & Structure",
+        "Perception & Color",
+        "Unconstrained Programming",
+      ],
+    ];
+
+    var dataR = [
+      [
+        -4.383464,
+        -1.3294888,
+        "Semantics of Directly Manipulating Spatializations",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Unconstrained Programming",
+      ],
+      [
+        -4.3651023,
+        -2.8521638,
+        "Visual Reconciliation of Alternative Similarity Spaces in Climate Modeling",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Quadratic Programming",
+      ],
+      [
+        -0.6147013,
+        -1.2175634,
+        "Interactive Structure-aware Blending of Diverse Edge Bundling Visualizations",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Unconstrained Programming",
+      ],
+      [
+        -1.3853489,
+        0.8289895,
+        "Exemplar-based Layout Fine-tuning for Node-link Diagrams",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.1098127,
+        -2.4264815,
+        "UTOPIAN- User-Driven Topic Modeling Based on Interactive Nonnegative Matrix Factorization",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Quadratic Programming",
+      ],
+      [
+        -2.5756328,
+        -0.39121848,
+        "Interactive Metro Map Editing",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Non-linear Programming",
+      ],
+      [
+        -3.1613622,
+        -1.6971796,
+        "Scatter-Gather Clustering- Flexibly Incorporating User Feedback to Steer Clustering Results",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Unconstrained Programming",
+      ],
+      [
+        -2.584208,
+        -1.5925602,
+        "Visual Cluster Exploration of Web Clickstream Data",
+        "Interactive Exploration & Analysis",
+        "Reconfigure",
+        "Unconstrained Programming",
+      ],
+    ];
+    var itemStyle = {
+      normal: {
+        opacity: 0.8,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: "rgba(0, 0, 0, 0.5)",
+      },
+    };
+
+    option = {
+      color: [
+        "rgb(252,124,9)",
+        "rgb(119,121,29)",
+        "rgb(220,199,70)",
+        "rgb(25,0,255)",
+        "rgb(205,56,196)",
+        "rgb(251,0,8)",
+        "rgb(252,0,138)",
+        "rgb(25,196,254)",
+        "rgb(206,0,5)",
+        "rgb(242,228,10)",
+        "rgb(252,121,119)",
+        "rgb(58,88,236)",
+      ],
+      legend: {
+        top: 10,
+        textStyle: {
+          fontSize: 20,
+        },
+        data: [
+          "Data Classification",
+          "Data Refinement",
+          "Dimension Reduction",
+          "Filter",
+          "Geographic Map Layout",
+          "Grid & Rectangle Layout",
+          "Hierarchical Structure Layout",
+          "Navigation",
+          "Node-Link Graph Layout",
+          "Numerosity Reduction",
+          "Perception & Color",
+          "Reconfigure",
+        ],
+      },
+      grid: {
+        left: "10%",
+        right: 200,
+        top: "15%",
+        bottom: "10%",
+      },
+      tooltip: {
+        padding: 10,
+        backgroundColor: "rgba(255,255,255,.5)",
+        borderColor: "rgba(0,0,0,.5)",
+        //   borderWidth: 1,
+        formatter: function (obj) {
+          var value = obj.value;
+          return (
+            '<div style="border-bottom: 1px solid rgba(255,255,255,.1); font-size: 18px;padding-bottom: 3px;margin-bottom: 0px">' +
+            "<b>" +
+            schema[2].text +
+            "</b>：" +
+            value[2] +
+            "<br><b>" +
+            schema[5].text +
+            "</b>：" +
+            value[5] +
+            "<br><b>" +
+            schema[3].text +
+            "</b>：" +
+            value[3] +
+            "<br><b>" +
+            schema[4].text +
+            "</b>：" +
+            value[4]
+          );
+        },
+      },
+      xAxis: {
+        type: "value",
+        name: "x",
+        nameGap: 16,
+        nameTextStyle: {
+          fontSize: 14,
+        },
+
+        show: false,
+        splitLine: {
+          show: false,
+        },
+        axisLabel: {
+          formatter: "{value}",
+        },
+      },
+      yAxis: {
+        type: "value",
+        name: "y",
+
+        nameLocation: "end",
+        nameGap: 20,
+        nameTextStyle: {
+          fontSize: 20,
+        },
+        show: false,
+        splitLine: {
+          show: false,
+        },
+      },
+      visualMap: [
+        {
+          left: null,
+          right: 0,
+          dimension: 5,
+          // selected: {
+          //   严重污染: false,
+          //   重度污染: false,
+          // },
+          categories: [
+            "Quadratic Programming",
+            "Unconstrained Programming",
+            "Non-linear Programming",
+            "Multi-objective Programming",
+            "Linear Programming",
+          ],
+          inRange: {
+            //   symbolSize: 30,
+            symbol: {
+              "Quadratic Programming": "rect",
+              "Unconstrained Programming": "diamond",
+              "Non-linear Programming": "triangle",
+              "Multi-objective Programming": "arrow",
+              "": "circle",
+            },
+          },
+          textStyle: {
+            fontSize: 20,
+          },
+          outOfRange: {
+            //   color: "#000"
+            //   symbolSize: {
+            //     "Quadratic Programming": 50,
+            //     "": 30,
+            //   },
+            symbol: {
+              "Quadratic Programming": "rect",
+              "Unconstrained Programming": "diamond",
+              "Non-linear Programming": "triangle",
+              "Multi-objective Programming": "arrow",
+              "": "circle",
+            },
+          },
+        },
+      ],
+      series: [
+        {
+          symbolSize: 20,
+          name: "Data Classification",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataDC,
+        },
+        {
+          symbolSize: 20,
+          name: "Data Refinement",
+          Symbol: "circle",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataDR,
+        },
+        {
+          symbolSize: 20,
+          name: "Dimension Reduction",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataDRN,
+        },
+        {
+          symbolSize: 20,
+          name: "Filter",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataF,
+        },
+        {
+          symbolSize: 20,
+          name: "Geographic Map Layout",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataGML,
+        },
+        {
+          symbolSize: 20,
+          name: "Grid & Rectangle Layout",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataGRL,
+        },
+
+        {
+          symbolSize: 20,
+          name: "Hierarchical Structure Layout",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataHSL,
+        },
+
+        {
+          symbolSize: 20,
+          name: "Navigation",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataN,
+        },
+
+        {
+          symbolSize: 20,
+          name: "Node-Link Graph Layout",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataNGL,
+        },
+
+        {
+          symbolSize: 20,
+          name: "Numerosity Reduction",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataNR,
+        },
+
+        {
+          symbolSize: 20,
+          name: "Perception & Color",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataPC,
+        },
+        {
+          symbolSize: 20,
+          name: "Reconfigure",
+          type: "scatter",
+          itemStyle: itemStyle,
+          data: dataR,
+        },
+      ],
+    };
+
+    if (option && typeof option === "object") {
+      myChart.setOption(option);
+    }
+  </script>
+</html>

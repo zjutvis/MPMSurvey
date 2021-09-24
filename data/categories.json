@@ -12,17 +12,16 @@
         "entries": [
           {
             "type": "category-entry",
+            "title": "perception",
+            "description": "Perception & Color",
+            "content": "Perception & Color"
+          },
+          {
+            "type": "category-entry",
             "title": "hierarchical",
             "description": "Hierarchical Structure Layout",
             "content": "Hierarchical Structure"
           },
-          {
-            "type": "category-entry",
-            "title": "grid",
-            "description": "Grid & Rectangle Layout",
-            "content": "Grid & Rectangle Layout"
-          },
-         
           {
             "type": "category-entry",
             "title": "geographic",
@@ -31,17 +30,16 @@
           },
           {
             "type": "category-entry",
-            "title": "node-link",
-            "description": "Node-Link Graph Layout",
-            "content": "Node-Link Graph Layout"
+            "title": "grid",
+            "description": "Grid & Rectangle Layout",
+            "content": "Grid & Rectangle Layout"
           },
           {
             "type": "category-entry",
-            "title": "perception",
-            "description": "Perception & Color",
-            "content": "Perception & Color"
+            "title": "node-link",
+            "description": "Node-Link Graph Layout",
+            "content": "Node-Link Graph Layout"
           }
-         
         ]
       },
       {
@@ -52,23 +50,24 @@
         "entries": [
           {
             "type": "category-entry",
-            "title": "dimension",
-            "description": "Dimension Reduction",
-            "content": "Dimension Reduction"
+            "title": "refinement",
+            "description": "Data Refinement",
+            "content": "Data Refinement"
           },
+         
           {
             "type": "category-entry",
             "title": "classification",
             "description": "Data Classification",
             "content": "Data Classification"
           },
-          
           {
             "type": "category-entry",
-            "title": "refinement",
-            "description": "Data Refinement",
-            "content": "Data Refinement"
+            "title": "dimension",
+            "description": "Dimension Reduction",
+            "content": "Dimension Reduction"
           },
+         
           {
             "type": "category-entry",
             "title": "numerosity",
@@ -112,30 +111,9 @@
     "childrenDescription": "Optimization model:",
     "entries": [
       
-      {
-        "type": "category-entry",
-        "title": "linear",
-        "description": "Linear Programming",
-        "content": "Linear Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "other1",
-        "description": "Other",
-        "content": "Other"
-      },
-      {
-        "type": "category-entry",
-        "title": "unconstrained",
-        "description": "Unconstrained Programming",
-        "content": "Unconstrained Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "multi-object",
-        "description": "Multi-Object Programming",
-        "content": "Multi-Object Programming"
-      },
+     
+     
+     
       {
         "type": "category-entry",
         "title": "quadratic",
@@ -147,11 +125,31 @@
         "title": "nonlinear",
         "description": "Nonlinear Programming",
         "content": "Nonlinear Programming"
-      }
-     
-     
-      
-      
+      },
+      {
+        "type": "category-entry",
+        "title": "multi-object",
+        "description": "Multi-Object Programming",
+        "content": "Multi-Object Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "unconstrained",
+        "description": "Unconstrained Programming",
+        "content": "Unconstrained Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "linear",
+        "description": "Linear Programming",
+        "content": "Linear Programming"
+      },
+      {
+        "type": "category-entry",
+        "title": "other1",
+        "description": "Other",
+        "content": "Other"
+      }     
     ]
   },
   {
@@ -286,16 +284,17 @@
         "entries": [
           {
             "type": "category-entry",
-            "title": "two",
-            "description": "Two-Stage Method",
-            "content": "Two-Stage Method"
-          },
-          {
-            "type": "category-entry",
             "title": "analytical method",
             "description": "Analytical Method",
             "content": "Analytical Method"
           },
+          {
+            "type": "category-entry",
+            "title": "two",
+            "description": "Two-Stage Method",
+            "content": "Two-Stage Method"
+          },
+         
           {
             "type": "category-entry",
             "title": "approximation",
@@ -314,6 +313,7 @@
             "description": "Other",
             "content": "Other"
           }
+          
         ]
       }
     ]
@@ -324,24 +324,8 @@
     "description": "Challenge",
     "childrenDescription": "Challenge: ",
     "entries": [
-      {
-        "type": "category-entry",
-        "title": "application",
-        "description": "Application",
-        "content": "Application"
-      },
-      {
-        "type": "category-entry",
-        "title": "evaluation",
-        "description": "Evaluation",
-        "content": "Evaluation"
-      },
-      {
-        "type": "category-entry",
-        "title": "model generalization",
-        "description": "Model generalization",
-        "content": "Model generalization"
-      },
+    
+     
       {
         "type": "category-entry",
         "title": "model scalability",
@@ -359,6 +343,24 @@
         "title": "visual interaction",
         "description": "Visual interaction",
         "content": "Visual interaction"
+      }, 
+      {
+        "type": "category-entry",
+        "title": "model generalization",
+        "description": "Model generalization",
+        "content": "Model generalization"
+      },
+      {
+        "type": "category-entry",
+        "title": "application",
+        "description": "Application",
+        "content": "Application"
+      },
+      {
+        "type": "category-entry",
+        "title": "evaluation",
+        "description": "Evaluation",
+        "content": "Evaluation"
       }
     ]
   }

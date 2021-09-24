@@ -697,17 +697,7 @@
     "Keywords": "Graph layout, orthogonal layout, automatic layout algorithms, user-generated layout, graph-drawing aesthetics ",
     "categories": ["node-link","unconstrained","first order","model scalability","Model generalization"]
   },
-  {
-    "title": "Critical Points of Gaussian-Distributed Scalar Fields on Simplicial Grids ",
-    "venue": "EuroVis",
-    "year": 2016,
-    "authors": "T. Liebmann, G. Scheuermann",
-    "id": "Kim2016",
-    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.12912",
-    "reference": "Liebmann, Tom, and Gerik Scheuermann. <i>Critical Points of Gaussian‐Distributed Scalar Fields on Simplicial Grids.</i> Computer Graphics Forum. Vol. 35. No. 3. 2016.",
-    "Keywords": "",
-    "categories": ["refinement","quadratic","solver1","model scalability"]
-  },
+  
   {
     "title": "Optimal Sets of Projections of High-Dimensional Data ",
     "venue": "TVCG",
@@ -1478,17 +1468,7 @@
     "Keywords": "Graph Visualization, Focus+Context Technique, Structure-aware Zoom, Graph Layout Technique ",
     "categories": ["navigation","unconstrained","two","Model generalization","application"]
   },
-  {
-    "title": "Data-Driven Colormap Optimization for 2D Scalar Field Visualization",
-    "venue": "IEEE VIS",
-    "year": 2019,
-    "authors": "Qiong Zeng, Yinqiao Wang, Jian Zhang, Wenting Zhang, Changhe Tu, Ivan Voila, Yunhai Wang",
-    "id": "Zeng2019",
-    "url": "https://ieeexplore.ieee.org/document/8933764",
-    "reference": "Q. Zeng et al., <i>Data-Driven Colormap Optimization for 2D Scalar Field Visualization,</i> 2019 IEEE Visualization Conference (VIS), 2019, pp. 266-270, doi: 10.1109/VISUAL.2019.8933764.",
-    "Keywords": "Scientific visualization, scalar fields, color mapping, visualization optimization ",
-    "categories": ["perception","nonlinear","solver1","evaluation","Model generalization"]
-  },
+ 
   {
     "title": "Graph Drawing by Stochastic Gradient Descent ",
     "venue": "TVCG",
@@ -1654,17 +1634,7 @@
     "Keywords": "Dimensionality reduction, contrastive learning, principal component analysis, high-dimensional data, visual analytics ",
     "categories": ["dimension","nonlinear","simple heuristic","model scalability"]
   },
-  {
-    "title": "A Globally Conforming Lattice Structure for 2D Stress Tensor Visualization ",
-    "venue": "EuroVis",
-    "year": 2020,
-    "authors": "Junpeng Wang, Jun Wu, Rüdiger Westermann",
-    "id": "Wang2020",
-    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13991",
-    "reference": "Wang, Junpeng, Jun Wu, and Rüdiger Westermann. <i>A Globally Conforming Lattice Structure for 2D Stress Tensor Visualization.</i>Computer Graphics Forum. Vol. 39. No. 3. 2020.",
-    "Keywords": "",
-    "categories": ["grid","nonlinear","approximation","Model generalization"]
-  },
+ 
   {
     "title": "Interactive Steering of Hierarchical Clustering ",
     "venue": "IEEE VIS",

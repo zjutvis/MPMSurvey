@@ -7,12 +7,14 @@
     <meta name="description" content="MPM Survey" />
     <meta name="author" content="Gopher" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <title>MPM Survey</title>
+    <title>
+      Application of Mathematical Programming Model in Information
+      Visualization: A Survey
+    </title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Optional Bootstrap theme (for fancy look) -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="css/sc2.css" rel="stylesheet" />
 
     <!-- noUiSlider -->
     <link href="css/jquery.nouislider.min.css" rel="stylesheet" />
@@ -81,6 +83,7 @@
     </div>
 
     <ul id="filtersTabList" class="nav nav-tabs" role="tablist">
+      &nbsp; &nbsp;
       <button class="hello" type="button">
         <li role="presentation" class="active">
           <a href="#" data-toggle="modal" data-target="#summaryTableModal"
@@ -439,14 +442,6 @@
     ];
 
     var dataDR = [
-      [
-        -5.1090403,
-        -1.1956102,
-        "Critical Points of Gaussian-Distributed Scalar Fields on Simplicial Grids",
-        "Data Enhancement & Transformation",
-        "Data Refinement",
-        "Quadratic Programming",
-      ],
       [
         -4.2408266,
         -2.3776999,
@@ -1010,14 +1005,7 @@
         "Grid & Rectangle Layout",
         "Linear Programming",
       ],
-      [
-        -2.591912,
-        -0.2253802,
-        "A Globally Conforming Lattice Structure for 2D Stress Tensor Visualization",
-        "Visual Mapping & Structure",
-        "Grid & Rectangle Layout",
-        "Non-linear Programming",
-      ],
+
       [
         -3.1388493,
         -1.1860312,
@@ -1529,14 +1517,7 @@
         "Perception & Color",
         "Unconstrained Programming",
       ],
-      [
-        -2.7310226,
-        1.6164205,
-        "Data-Driven Colormap Optimization for 2D Scalar Field Visualization",
-        "Visual Mapping & Structure",
-        "Perception & Color",
-        "Non-linear Programming",
-      ],
+
       [
         -2.029905,
         -0.10211941,
@@ -1724,18 +1705,18 @@
           fontSize: 20,
         },
         data: [
-          "Data Classification",
-          "Data Refinement",
-          "Dimension Reduction",
           "Filter",
+          "Navigation",
+          "Reconfigure",
+          "Data Refinement",
+          "Perception & Color",
+          "Data Classification",
+          "Dimension Reduction",
+          "Numerosity Reduction",
           "Geographic Map Layout",
+          "Node-Link Graph Layout",
           "Grid & Rectangle Layout",
           "Hierarchical Structure Layout",
-          "Navigation",
-          "Node-Link Graph Layout",
-          "Numerosity Reduction",
-          "Perception & Color",
-          "Reconfigure",
         ],
       },
       grid: {
@@ -1804,13 +1785,10 @@
       },
       visualMap: [
         {
-          left: null,
-          right: 0,
+          orient: "horizontal",
+          top: 75,
+          left: 95,
           dimension: 5,
-          // selected: {
-          //   严重污染: false,
-          //   重度污染: false,
-          // },
           categories: [
             "Quadratic Programming",
             "Unconstrained Programming",
@@ -1819,7 +1797,6 @@
             "Linear Programming",
           ],
           inRange: {
-            //   symbolSize: 30,
             symbol: {
               "Quadratic Programming": "rect",
               "Unconstrained Programming": "diamond",
@@ -1832,11 +1809,6 @@
             fontSize: 20,
           },
           outOfRange: {
-            //   color: "#000"
-            //   symbolSize: {
-            //     "Quadratic Programming": 50,
-            //     "": 30,
-            //   },
             symbol: {
               "Quadratic Programming": "rect",
               "Unconstrained Programming": "diamond",

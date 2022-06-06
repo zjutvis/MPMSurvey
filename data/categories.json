@@ -6,10 +6,16 @@
     "entries": [
       {
         "type": "category",
-        "title": "visual mapping",
-        "description": "Visual Mapping",
-        "childrenDescription": "Visual Mapping: ",
+        "title": "Representation & Rendering",
+        "description": "Representation & Rendering",
+        "childrenDescription": "Representation & Rendering:",
         "entries": [
+          {
+            "type": "category-entry",
+            "title": "rendering",
+            "description": "Rendering",
+            "content": "Rendering"
+          },
           {
             "type": "category-entry",
             "title": "perception",
@@ -34,6 +40,7 @@
             "description": "Grid & Rectangle Layout",
             "content": "Grid & Rectangle Layout"
           },
+          
           {
             "type": "category-entry",
             "title": "node-link",
@@ -45,7 +52,7 @@
       {
         "type": "category",
         "title": "data enhancement",
-        "description": "Data Enhancement",
+        "description": "Data Enhancement & Transformation",
         "childrenDescription": "Data Enhancement & Transformation: ",
         "entries": [
           {
@@ -66,13 +73,6 @@
             "title": "dimension",
             "description": "Dimension Reduction",
             "content": "Dimension Reduction"
-          },
-         
-          {
-            "type": "category-entry",
-            "title": "numerosity",
-            "description": "Numerosity Reduction",
-            "content": "Numerosity Reduction"
           }
         ]
       },
@@ -104,54 +104,9 @@
       }
     ]
   },
-  {
-    "type": "category",
-    "title": "Optimization model",
-    "description": "Optimization model",
-    "childrenDescription": "Optimization model:",
-    "entries": [
-      
-     
-     
-     
-      {
-        "type": "category-entry",
-        "title": "quadratic",
-        "description": "Quadratic Programming",
-        "content": "Quadratic Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "nonlinear",
-        "description": "Nonlinear Programming",
-        "content": "Nonlinear Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "multi-object",
-        "description": "Multi-Object Programming",
-        "content": "Multi-Object Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "unconstrained",
-        "description": "Unconstrained Programming",
-        "content": "Unconstrained Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "linear",
-        "description": "Linear Programming",
-        "content": "Linear Programming"
-      },
-      {
-        "type": "category-entry",
-        "title": "other1",
-        "description": "Other",
-        "content": "Other"
-      }     
-    ]
-  },
+
+
+
   {
     "type": "category",
     "title": "Solution method",
@@ -171,15 +126,15 @@
           },
           {
             "type": "category-entry",
-            "title": "divide",
-            "description": "Divide and Conquer",
-            "content": "Divide and Conquer"
+            "title": "partitioned recursion",
+            "description": "Partitioned recursion",
+            "content": "Partitioned recursion"
           },
           {
             "type": "category-entry",
-            "title": "graph theory algorithms",
-            "description": "Graph Theory Algorithms",
-            "content": "Graph Theory Algorithms"
+            "title": "graph theory algorithm",
+            "description": "Graph Theory Algorithm",
+            "content": "Graph Theory Algorithm"
           }
         ]
       },
@@ -192,8 +147,8 @@
           {
             "type": "category-entry",
             "title": "intelligent optimization",
-            "description": "Intelligent Optimization Algorithms",
-            "content": "Intelligent Optimization"
+            "description": "Intelligent optimization",
+            "content": "Intelligent optimization"
           },
           {
             "type": "category-entry",
@@ -212,15 +167,14 @@
           {
             "type": "category-entry",
             "title": "active set method",
-            "description": "Active Set Method",
-            "content": "Active Set Method"
+            "description": "Active set method",
+            "content": "Active set method"
           },
-         
           {
             "type": "category-entry",
-            "title": "optimization",
-            "description": "Optimization Method without Derivative",
-            "content": "Optimization Method"
+            "title": "gradient-free",
+            "description": "Gradient-free optimization method",
+            "content": "Gradient-free optimization"
           },
           {
             "type": "category-entry",
@@ -231,8 +185,8 @@
           {
             "type": "category-entry",
             "title": "second order",
-            "description": "Second order Gradient-based Optimization Algorithm",
-            "content": "Second order Gradient-based"
+            "description": "Second-order Gradient-based Optimization Algorithm",
+            "content": "Second-order Gradient-based"
           }
         ]
       },
@@ -244,7 +198,7 @@
         "entries": [
           {
             "type": "category-entry",
-            "title": "solver1",
+            "title": "solver",
             "description": "Solver",
             "content": "Solver"
           }
@@ -264,9 +218,9 @@
           },
           {
             "type": "category-entry",
-            "title": "hungary",
-            "description": "Hungary Method",
-            "content": "Hungary Method"
+            "title": "hungarian",
+            "description": "Hungarian Method",
+            "content": "Hungarian Method"
           },
           {
             "type": "category-entry",
@@ -284,9 +238,15 @@
         "entries": [
           {
             "type": "category-entry",
-            "title": "analytical method",
-            "description": "Analytical Method",
-            "content": "Analytical Method"
+            "title": "other1",
+            "description": "Others",
+            "content": "Others"
+          },
+          {
+            "type": "category-entry",
+            "title": "analytic method",
+            "description": "Analytic Method",
+            "content": "Analytic Method"
           },
           {
             "type": "category-entry",
@@ -301,20 +261,105 @@
             "description": "Approximation Algorithm",
             "content": "Approximation Algorithm"
           },
+          
+         
           {
             "type": "category-entry",
-            "title": "numerical",
-            "description": "Numerical Algebra Method",
-            "content": "Numerical Algebra Method"
-          },
-          {
-            "type": "category-entry",
-            "title": "other",
-            "description": "Other",
-            "content": "Other"
+            "title": "numerical algebraic method",
+            "description": "Numerical algebraic Method",
+            "content": "Numerical algebraic Method"
           }
           
         ]
+      }
+    ]
+  },
+
+
+  {
+    "type": "category",
+    "title": "Single-objective/Multi-objective",
+    "description": "Single-objective/Multi-objective",
+    "childrenDescription": "Single/Multi: ",
+    "entries": [
+      {
+        "type": "category-entry",
+        "title": "single-objective",
+        "description": "Single-objective",
+        "content": "Single-objective"
+      },
+      {
+        "type": "category-entry",
+        "title": "multi-objective",
+        "description": "Multi-objective",
+        "content": "Multi-objective"
+      }
+    ]
+  },
+
+  {
+    "type": "category",
+    "title": "Linear/Nonlinear",
+    "description": "Linear/Nonlinear",
+    "childrenDescription": "Linear/Nonlinear: ",
+    "entries": [
+      {
+        "type": "category-entry",
+        "title": "linear",
+        "description": "Linear",
+        "content": "Linear"
+      },
+      {
+        "type": "category-entry",
+        "title": "nonlinear",
+        "description": "Nonlinear",
+        "content": "Nonlinear"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Discrete/Continuous/Mixed",
+    "description": "Discrete/Continuous/Mixed",
+    "childrenDescription": "Discrete/Continuous/Mixed: ",
+    "entries": [
+      {
+        "type": "category-entry",
+        "title": "discrete",
+        "description": "Discrete",
+        "content": "Discrete"
+      },
+      {
+        "type": "category-entry",
+        "title": "mixed",
+        "description": "Mixed",
+        "content": "Mixed"
+      },
+      {
+        "type": "category-entry",
+        "title": "continuous",
+        "description": "Continuous",
+        "content": "Continuous"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Constrained/Unconstrained",
+    "description": "Constrained/Unconstrained",
+    "childrenDescription": "Constrained/Unconstrained: ",
+    "entries": [
+      {
+        "type": "category-entry",
+        "title": "constrained",
+        "description": "Constrained",
+        "content": "Constrained"
+      },
+      {
+        "type": "category-entry",
+        "title": "unconstrained",
+        "description": "Unconstrained",
+        "content": "Unconstrained"
       }
     ]
   },
@@ -329,8 +374,8 @@
       {
         "type": "category-entry",
         "title": "model scalability",
-        "description": "Model scalability",
-        "content": "Model scalability"
+        "description": "Model Scalability",
+        "content": "Model Scalability"
       },
       {
         "type": "category-entry",
@@ -347,8 +392,8 @@
       {
         "type": "category-entry",
         "title": "model generalization",
-        "description": "Model generalization",
-        "content": "Model generalization"
+        "description": "Model Generalization",
+        "content": "Model Generalization"
       },
       {
         "type": "category-entry",

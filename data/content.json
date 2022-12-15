@@ -2143,4 +2143,192 @@
     "authors": "M.A. Bekos, D.J.C. Dekker, F. Frank, W. Meulemans, P. Rodgers, A. Schulz and S. Wessel",
     "Keywords": "information visualization, hypergraph drawing, visualization, computational geometry, modelling",
     "categories": ["grid","intelligent optimization","discrete","multi-objective","nonlinear","unconstrained","visual interaction","evaluation","model scalability"]
-  }]
+  },
+  {
+    "title": "WYSIWYG (What You See is What You Get) Volume Visualization",
+    "reference": "Guo, Hanqi, Ningyu Mao, and Xiaoru Yuan. <i>Wysiwyg (what you see is what you get) volume visualization.</i> IEEE Transactions on Visualization and Computer Graphics 17.12 (2011): 2106-2114.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6064975",
+    "venue": "TVCG",
+    "tine": 2011,
+    "authors": "Hanqi Guo, Ningyu Mao, and Xiaoru Yuan",
+    "id": "Guo2011",
+    "Keywords": "Volume rendering, Sketching input, Human-computer interaction, Transfer functions, Feature space",
+    "categories": ["classification","graph theory algorithm","discrete","multi-objective","nonlinear","unconstrained","evaluation","application"]
+  },
+  {
+    "title": "Load-Balanced Parallel Streamline Generation on Large Scale Vector Fields",
+    "reference": "Nouanesengsy, Boonthanome, Teng-Yok Lee, and Han-Wei Shen. <i>Load-balanced parallel streamline generation on large scale vector fields.</i> IEEE Transactions on Visualization and Computer Graphics 17.12 (2011): 1785-1794.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6064941",
+    "venue": "TVCG",
+    "tine": 2011,
+    "authors": "Boonthanome Nouanesengsy, Teng-Yok Lee, and Han-Wei Shen",
+    "id": "Nouanesengsy2011",
+    "Keywords": "Flow visualization, Parallel processing, 3D vector ﬁeld visualization, Streamlines",
+    "categories": ["rendering","second order","continuous","single-objective","nonlinear","constrained","model scalability","model generalization"]
+  },
+  {
+    "title": "GPU-Based Real-Time Approximation of the Ablation Zone for Radiofrequency Ablation",
+    "reference": "Rieder, Christian, et al. <i>GPU-based real-time approximation of the ablation zone for radiofrequency ablation.</i> IEEE transactions on visualization and computer graphics 17.12 (2011): 1812-1821.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6064944",
+    "venue": "TVCG",
+    "tine": 2011,
+    "authors": "Christian Rieder, Tim Kröger, Christian Schumann, and Horst K. Hahn",
+    "id": "Rieder2011",
+    "Keywords": "Radiofrequency ablation, ablation zone visualization, distance field, volume rendering, GPU, interaction",
+    "categories": ["rendering","gradient-free","continuous","single-objective","nonlinear","unconstrained","evaluation","model scalability"]
+  },
+  {
+    "title": "Automatic Transfer Functions Based on Informational Divergence",
+    "reference": "Ruiz, Marc, et al. <i>Automatic transfer functions based on informational divergence.</i> IEEE Transactions on Visualization and Computer Graphics 17.12 (2011): 1932-1941.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6064956",
+    "venue": "TVCG",
+    "tine": 2011,
+    "authors": "Marc Ruiz, Anton Bardera, Imma Boada, Ivan Viola, Miquel Feixas, and Mateu Sbert",
+    "id": "Ruiz2011",
+    "Keywords": "Transfer function, Information theory, Informational divergence, Kullback-Leibler distance",
+    "categories": ["rendering","first order","continuous","single-objective","nonlinear","unconstrained","model generalization"]
+  },
+  {
+    "title": "Interactive Virtual Probing of 4D MRI Blood-Flow",
+    "reference": "Van Pelt, Roy, et al. <i>Interactive virtual probing of 4D MRI blood-flow.</i> IEEE Transactions on Visualization and Computer Graphics 17.12 (2011): 2153-2162.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6064980",
+    "venue": "TVCG",
+    "tine": 2011,
+    "authors": "Roy van Pelt, Javier Oliván Bescós, Marcel Breeuwer, Rachel E. Clough,\nM. Eduard Gröller, Bart ter Haar Romeny, and Anna Vilanova",
+    "id": "Pelt2011",
+    "Keywords": "Probing, Flow visualization, Illustrative visualization, Multivalued images, Phase-contrast cine MRI",
+    "categories": ["rendering","partitioned recursion","continuous","single-objective","nonlinear","unconstrained","application"]
+  },
+  {
+    "title": "Automatic Tuning of Spatially Varying Transfer Functions for Blood Vessel Visualization",
+    "reference": "Läthén, Gunnar, et al. <i>Automatic tuning of spatially varying transfer functions for blood vessel visualization.</i> IEEE Transactions on Visualization and Computer Graphics 18.12 (2012): 2345-2354.",
+    "url": "https://ieeexplore.ieee.org/document/6327239",
+    "venue": "TVCG",
+    "tine": 2012,
+    "authors": "Gunnar Läthén, Stefan Lindholm, Reiner Lenz,\nAnders Persson, and Magnus Borga",
+    "id": "Lathen2012",
+    "Keywords": "Direct volume rendering, transfer functions, vessel visualization",
+    "categories": ["rendering","grid search","continuous","single-objective","nonlinear","constrained","evaluation"]
+  },
+  {
+    "title": "Visualization of Astronomical Nebulae via Distributed Multi-GPU Compressed Sensing Tomography",
+    "reference": "Wenger, Stephan, et al. <i>Visualization of astronomical nebulae via distributed multi-gpu compressed sensing tomography.</i> IEEE transactions on visualization and computer graphics 18.12 (2012): 2188-2197.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6327223",
+    "venue": "TVCG",
+    "tine": 2012,
+    "authors": "Stephan Wenger, Marco Ament, Stefan Guthe, Dirk Lorenz, Andreas Tillmann, Daniel Weiskopf, Computer Society, and Marcus Magnor",
+    "id": "Wenger2012",
+    "Keywords": "Astronomical visualization, distributed volume reconstruction, direct volume rendering",
+    "categories": ["rendering","first order","continuous","single-objective","nonlinear","constrained","model generalization"]
+  },
+  {
+    "title": "Coupled Ensemble Flow Line Advection and Analysis",
+    "reference": "Guo, Hanqi, et al. <i>Coupled ensemble flow line advection and analysis.</i> IEEE Transactions on Visualization and Computer Graphics 19.12 (2013): 2733-2742.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6634188",
+    "venue": "TVCG",
+    "tine": 2013,
+    "authors": "Hanqi Guo, Xiaoru Yuan, Jian Huang, and Xiaomin Zhu",
+    "id": "Guo2013",
+    "Keywords": "Ensemble analysis, parallel processing, field line advection",
+    "categories": ["node-link","other1","continuous","single-objective","nonlinear","unconstrained","model generalization","visual interaction"]
+  },
+  {
+    "title": "Area-Preservation Mapping using Optimal Mass Transport",
+    "reference": "Zhao, Xin, et al. <i>Area-preservation mapping using optimal mass transport.</i> IEEE transactions on visualization and computer graphics 19.12 (2013): 2838-2847.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6634117",
+    "venue": "TVCG",
+    "tine": 2013,
+    "authors": "Xin Zhao, Zhengyu Su, Xianfeng David Gu, Arie Kaufman, Jian Sun, Jie Gao, and Feng Luo",
+    "id": "Zhao2013",
+    "Keywords": "Area-preservation mapping, surface flattening, optimal transport map, Monge-Brenier theory, visualization and graphics applications",
+    "categories": ["rendering","second order","continuous","single-objective","nonlinear","unconstrained","model generalization","model scalability"]
+  },
+  {
+    "title": "Sparse PDF Volumes for Consistent Multi-Resolution Volume Rendering",
+    "reference": "Sicat, Ronell, et al. <i>Sparse PDF volumes for consistent multi-resolution volume rendering.</i> IEEE transactions on visualization and computer graphics 20.12 (2014): 2417-2426.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6876002",
+    "venue": "TVCG",
+    "tine": 2014,
+    "authors": "Ronell Sicat, Jens Krüger, Torsten Möller, and Markus Hadwiger",
+    "id": "Sicat2014",
+    "Keywords": "Multi-resolution representations, sparse approximation, pursuit algorithms, large-scale volume rendering",
+    "categories": ["rendering","simple heuristic","continuous","single-objective","linear","constrained","model scalability"]
+  },
+  {
+    "title": "ADR - Anatomy-Driven Reformation",
+    "reference": "Kretschmer, Jan, et al. <i>ADR-anatomy-driven reformation.</i> IEEE Transactions on Visualization and Computer Graphics 20.12 (2014): 2496-2505.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6876018",
+    "venue": "TVCG",
+    "tine": 2014,
+    "authors": "Jan Kretschmer, Grzegorz Soza, Christian Tietjen, Michael Suehling, Bernhard Preim, and Marc Stamminger",
+    "id": "Kretschmer2014",
+    "Keywords": "Medical Visualization, Volume Reformation, Viewing Algorithms",
+    "categories": ["grid","two","continuous","single-objective","nonlinear","unconstrained","evaluation"]
+  },
+  {
+    "title": "Fast and Memory-Efficient Topological Denoising of 2D and 3D Scalar Fields",
+    "reference": "Günther, David, et al. <i>Fast and memory-efficienty topological denoising of 2D and 3D scalar fields.</i> IEEE transactions on visualization and computer graphics 20.12 (2014): 2585-2594.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6875939",
+    "venue": "TVCG",
+    "tine": 2014,
+    "authors": "David Günther, Alec Jacobson, Jan Reininghaus, Hans-Peter Seidel, Olga Sorkine-Hornung, Tino Weinkauf",
+    "id": "Gunther2014",
+    "Keywords": "Numerical optimization, topology, scalar fields",
+    "categories": ["rendering","solver","discrete","single-objective","nonlinear","constrained","model generalization"]
+  },
+  {
+    "title": "Volume-Preserving Mapping and Registration for Collective Data Visualization",
+    "reference": "Hu, Jiaxi, Guangyu Jeff Zou, and Jing Hua. <i>Volume-preserving mapping and registration for collective data visualization.</i> IEEE transactions on visualization and computer graphics 20.12 (2014): 2664-2673.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/6875953",
+    "venue": "TVCG",
+    "tine": 2014,
+    "authors": "Jiaxi Hu, Guangyu Jeff Zou and Jing Hua",
+    "id": "Hu2014",
+    "Keywords": "Volume-preserving mapping, data regularization, data transformation",
+    "categories": ["rendering","numerical algebraic method","continuous","single-objective","nonlinear","constrained","model scalability"]
+  },
+  {
+    "title": "Planar Visualization of Treelike Structures",
+    "reference": "Marino, Joseph, and Arie Kaufman. <i>Planar visualization of treelike structures.</i> IEEE Transactions on Visualization and Computer Graphics 22.1 (2015): 906-915.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/7192698",
+    "venue": "TVCG",
+    "tine": 2015,
+    "authors": "Joseph Marino and Arie Kaufman",
+    "id": "Marino2015",
+    "Keywords": "Geometry-based techniques, view-dependent visualization, medical visualization, planar embedding",
+    "categories": ["grid","other1","continuous","single-objective","nonlinear","unconstrained","evaluation","model generalization"]
+  },
+  {
+    "title": "Towards Better Pattern Enhancement in Temporal Evolving Set Visualization",
+    "reference": "Zhu, Zihao, et al. <i>Towards better pattern enhancement in temporal evolving set visualization.</i> Journal of Visualization (2022): 1-19.",
+    "url": "https://link.springer.com/article/10.1007/s12650-022-00896-x",
+    "venue": "JoV",
+    "tine": 2022,
+    "authors": "Zihao Zhu, Yue Shen, Sujia Zhu, Gefei Zhang, Ronghua Liang, Guodao Sun",
+    "id": "Zhu2022",
+    "Keywords": "Temporal evolving set data Pattern enhancement strategy Progressive timeline layout algorithm",
+    "categories": ["node-link","solver","continuous","multi-objective","linear","constrained","model generalization","model scalability"]
+  },
+  {
+    "title": "MosaicSets: Embedding Set Systems into Grid Graphs",
+    "reference": "Rottmann, Peter, et al. <i>MosaicSets: Embedding Set Systems into Grid Graphs.</i> IEEE Transactions on Visualization and Computer Graphics (1912).",
+    "url": "https://ieeexplore.ieee.org/abstract/document/9904435",
+    "venue": "TVCG",
+    "tine": 2022,
+    "authors": "Peter Rottmann, Markus Wallinger, Annika Bonerath, Sven Gedicke, Martin Nöllenburg, and Jan-Henrik Haunert",
+    "id": "Rottmann2022",
+    "Keywords": "Set Visualization, Euler Diagram, Integer Linear Programming, Hypergraph",
+    "categories": ["grid","solver","discrete","single-objective","linear","constrained","visual interaction","application"]
+  },
+  {
+    "title": "Diagnosing Ensemble Few-Shot Classifiers",
+    "reference": "Yang, Weikai, et al. <i>Diagnosing Ensemble Few-Shot Classifiers.</i> arXiv preprint arXiv:2206.04372 (2022).",
+    "url": "https://arxiv.org/abs/2206.04372",
+    "venue": "TVCG",
+    "tine": 2022,
+    "authors": "Weikai Yang, Xi Ye, Xingxing Zhang, Lanxi Xiao, Jiazhi Xia, Zhongyuan Wang, Jun Zhu, Hanspeter Pfister, and Shixia Liu",
+    "id": "Yang2022",
+    "Keywords": "Few-shot learning, ensemble model, subset selection, matrix visualization, scatterplot",
+    "categories": ["refinement","two","discrete","single-objective","linear","constrained","model generalization","model scalability"]
+  }
+]

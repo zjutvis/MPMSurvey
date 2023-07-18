@@ -20,9 +20,8 @@ Mathematical optimization is the process of determining the set of globally or l
     journal={IEEE Transactions on Big Data},
     title={Application of Mathematical Optimization in Data Visualization and Visual Analytics: A Survey},
     year={2023},
-    volume={},
-    number={},
-    pages={1-20},
-    note = {early access},
+    volume={9},
+    number={4},
+    pages={1018-1037},
 }
 ```
